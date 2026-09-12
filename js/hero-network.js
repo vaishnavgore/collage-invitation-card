@@ -98,7 +98,9 @@
   function init() {
     resize();
     particles = [];
-    for (let i = 0; i < CONFIG.particleCount; i++) {
+    const isMobile = window.innerWidth < 768;
+    const count = isMobile ? 36 : CONFIG.particleCount;
+    for (let i = 0; i < count; i++) {
       particles.push(new Particle());
     }
   }
@@ -144,6 +146,21 @@
 
   window.addEventListener('mouseleave', () => {
     mouse.active = false;
+  }, { passive: true });
+
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches[0]) {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.touches[0].clientX - rect.left;
+      mouse.y = e.touches[0].clientY - rect.top;
+      mouse.active = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => {
+    mouse.active = false;
+    mouse.x = -1000;
+    mouse.y = -1000;
   }, { passive: true });
 
   init();

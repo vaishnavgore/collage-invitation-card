@@ -235,6 +235,15 @@
         hamburger.setAttribute('aria-expanded', 'false');
       });
     });
+
+    // Close mobile menu on outside tap
+    document.addEventListener('click', (e) => {
+      if (mobileMenu.classList.contains('open') && navbar && !navbar.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
 
   /* ── 6. COUNTDOWN TIMER ───────────────────────────────────── */
