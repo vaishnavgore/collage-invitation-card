@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering Day 2026 · Samarth College of Engineering &amp; Management, Belhe</title>
+  <meta name="description" content="Official invitation to Engineering Day 2026, jointly hosted by the Departments of AIML & Data Science at Samarth College of Engineering & Management, Belhe." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="progress-bar" aria-hidden="true"></div>
+
+  <!-- Minimalist Preloader -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-crest">
+        <div class="preloader-circle"></div>
+        <div class="preloader-monogram">ED</div>
+      </div>
+      <p class="preloader-text">Engineering Day 2026</p>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#home" class="nav-brand" aria-label="Go to top">
+        <div class="nav-logo-box">ED</div>
+        <div>
+          <span class="nav-brand-name">Samarth College</span>
+          <span class="nav-brand-sub">Engineering Day 2026</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">Invitation</a></li>
+        <li><a href="#departments" class="nav-link">Departments</a></li>
+        <li><a href="#schedule" class="nav-link">Schedule</a></li>
+        <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#rsvp" class="btn-nav-rsvp">RSVP Now</a>
+        <button id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" role="menu" aria-hidden="true">
+      <a href="#home" class="mob-link" role="menuitem">Home</a>
+      <a href="#about" class="mob-link" role="menuitem">Invitation</a>
+      <a href="#departments" class="mob-link" role="menuitem">Departments</a>
+      <a href="#schedule" class="mob-link" role="menuitem">Schedule</a>
+      <a href="#rsvp" class="mob-link" role="menuitem">RSVP</a>
+      <a href="#contact" class="mob-link" role="menuitem">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section" aria-label="Hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-ambient-glow" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <!-- Big & Highlighted College Name Header -->
+      <div id="hero-college" class="hero-college-block">
+        <div class="hero-college-eyebrow">
+          <span class="hero-sparkle-dot"></span>
+          <span>CAMPUS CELEBRATION</span>
+          <span class="hero-sparkle-dot"></span>
+        </div>
+        <h2 class="hero-college-title">
+          Samarth College of Engineering &amp; Management, <span class="college-location">Belhe</span>
+        </h2>
+      </div>
+
+      <h1 id="hero-title" class="editorial-title">
+        Engineering Day <span class="editorial-serif-accent gold-gradient-text">2026</span>
+      </h1>
+
+      <p id="hero-sub" class="hero-subhead">
+        Jointly hosted by the Departments of <strong>Artificial Intelligence &amp; Machine Learning</strong> and <strong>Computer Science &amp; Engineering (Data Science)</strong> to celebrate the spirit of engineering with every department on campus.
+      </p>
+
+      <!-- Countdown Timer -->
+      <div id="hero-countdown" class="countdown-box" role="timer" aria-label="Countdown to Engineering Day 2026">
+        <div class="countdown-header">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Celebration Begins In
+        </div>
+        <div class="countdown-units">
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cnt-days">00</span>
+            <span class="countdown-lbl">Days</span>
+          </div>
+          <span class="countdown-sep" aria-hidden="true">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cnt-hours">00</span>
+            <span class="countdown-lbl">Hours</span>
+          </div>
+          <span class="countdown-sep" aria-hidden="true">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cnt-mins">00</span>
+            <span class="countdown-lbl">Mins</span>
+          </div>
+          <span class="countdown-sep" aria-hidden="true">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cnt-secs">00</span>
+            <span class="countdown-lbl">Secs</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="hero-cta" class="hero-cta-group">
+        <a href="#departments" class="btn-primary">
+          Explore Invitations
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#rsvp" class="btn-secondary">
+          Confirm Attendance
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Continuous Marquee Ticker -->
+  <div class="marquee-container" aria-hidden="true">
+    <div class="marquee-content">
+      <div class="marquee-item">Artificial Intelligence &amp; Machine Learning <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">Computer Science (Data Science) <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">Computer Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">E&amp;TC Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">Electrical Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">Mechanical Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">Civil Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">Automobile Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">MCA <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">First Year Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">September 15, 2026 · Seminar Hall <span class="marquee-dot">◆</span></div>
+      <!-- Duplicate for infinite seamless loop -->
+      <div class="marquee-item">Artificial Intelligence &amp; Machine Learning <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">Computer Science (Data Science) <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">Computer Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">E&amp;TC Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">Electrical Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">Mechanical Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">Civil Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">Automobile Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">MCA <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">First Year Engineering <span class="marquee-dot">◆</span></div>
+      <div class="marquee-item">September 15, 2026 · Seminar Hall <span class="marquee-dot">◆</span></div>
+    </div>
+  </div>
+
+  <!-- About & Welcome Section -->
+  <section id="about" class="section-pad" aria-labelledby="about-title">
+    <div class="container">
+      <div class="text-center reveal-up">
+        <div class="micro-badge">From The Host Departments</div>
+        <h2 id="about-title" class="editorial-title">
+          A Heartfelt <span class="editorial-serif-accent gold-gradient-text">Invitation</span>
+        </h2>
+        <p class="section-sub">
+          Transcend departmental boundaries and celebrate the passion, curiosity, and craft that unites us all.
+        </p>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="bento-grid">
+        <!-- Main Invitation Letter -->
+        <div class="spotlight-card bento-card-main reveal-up">
+          <div class="card-content">
+            <div class="letterhead-badge">
+              <svg class="seal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span class="letterhead-title">Official Joint Letterhead</span>
+            </div>
+
+            <p class="letter-salutation">Dear Esteemed Colleagues, Faculty &amp; Students,</p>
+            <p class="letter-body">
+              Engineering is much more than equations and technical frameworks — it is a shared mindset of problem-solving, resilience, and boundless invention.
+            </p>
+            <p class="letter-body">
+              The Departments of <strong>Artificial Intelligence &amp; Machine Learning (AIML)</strong> and <strong>Computer Science &amp; Engineering (Data Science)</strong> take immense pride and joy in welcoming every branch of engineering across our campus to celebrate <strong>Engineering Day 2026</strong>.
+            </p>
+            <p class="letter-body">
+              Let us gather together at the Seminar Hall on <strong>September 15, 2026</strong> to honor our past milestones, present innovations, and the limitless future we are creating together.
+            </p>
+
+            <div class="letter-signature">
+              <span class="sig-from">Warmest regards,</span>
+              <span class="sig-name">Prof. Chaudhari N.J · Head of Department, AIML &amp; DS</span>
+              <span class="sig-college">Samarth College of Engineering &amp; Management, Belhe</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side Bento Column -->
+        <div class="bento-col-side">
+          <!-- Tribute Card -->
+          <div class="spotlight-card tribute-card reveal-up">
+            <div class="card-content">
+              <p class="tribute-quote">
+                &ldquo;To give real service you must add something which cannot be bought or measured with money, and that is sincerity and integrity.&rdquo;
+              </p>
+              <p class="tribute-author">Bharat Ratna Sir M. Visvesvaraya</p>
+              <p class="tribute-title">Pioneer Engineer &amp; Inspiration for Engineering Day</p>
+            </div>
+          </div>
+
+          <!-- Quick Stats Bento -->
+          <div class="spotlight-card stats-grid reveal-up">
+            <div class="card-content stat-item">
+              <span class="stat-value counter-num" data-target="8">8+</span>
+              <span class="stat-label">Departments</span>
+            </div>
+            <div class="card-content stat-item">
+              <span class="stat-value counter-num" data-target="1000">1000+</span>
+              <span class="stat-label">Engineers</span>
+            </div>
+            <div class="card-content stat-item">
+              <span class="stat-value counter-num" data-target="1">1</span>
+              <span class="stat-label">United Spirit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Department Invitations -->
+  <section id="departments" class="section-pad" aria-labelledby="dept-title">
+    <div class="container">
+      <div class="text-center reveal-up">
+        <div class="micro-badge">Campus-Wide Invitation</div>
+        <h2 id="dept-title" class="editorial-title">
+          Honoring Every <span class="editorial-serif-accent gold-gradient-text">Engineering Family</span>
+        </h2>
+        <p class="section-sub">
+          Click any department to view their dedicated formal invitation and prefill your RSVP.
+        </p>
+      </div>
+
+      <div class="dept-grid">
+        <!-- Computer Engineering -->
+        <div class="spotlight-card dept-card reveal-up" onclick="openDeptModal('ce')" role="button" tabindex="0">
+          <div class="card-content">
+            <div class="dept-card-top">
+              <div class="dept-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <span class="dept-card-num">01 / DEPT</span>
+            </div>
+            <h3 class="dept-name">Computer Engineering</h3>
+            <p class="dept-message">
+              From algorithms to distributed systems, join the AIML &amp; Data Science family as we celebrate the software that shapes our modern society.
+            </p>
+            <span class="dept-card-link">View Formal Invite &rarr;</span>
+          </div>
+        </div>
+
+        <!-- E&TC Engineering -->
+        <div class="spotlight-card dept-card reveal-up" onclick="openDeptModal('entc')" role="button" tabindex="0">
+          <div class="card-content">
+            <div class="dept-card-top">
+              <div class="dept-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12h2l3 9 4-18 3 9h2"/><circle cx="19" cy="12" r="3"/></svg>
+              </div>
+              <span class="dept-card-num">02 / DEPT</span>
+            </div>
+            <h3 class="dept-name">E&amp;TC Engineering</h3>
+            <p class="dept-message">
+              Connecting worlds through signals, telecommunications, and embedded intelligence. Join us to amplify the spirit of campus innovation.
+            </p>
+            <span class="dept-card-link">View Formal Invite &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Electrical Engineering -->
+        <div class="spotlight-card dept-card reveal-up" onclick="openDeptModal('ee')" role="button" tabindex="0">
+          <div class="card-content">
+            <div class="dept-card-top">
+              <div class="dept-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <span class="dept-card-num">03 / DEPT</span>
+            </div>
+            <h3 class="dept-name">Electrical Engineering</h3>
+            <p class="dept-message">
+              Illuminating progress and powering the world's greatest systems. Power up and join the current of celebration with us.
+            </p>
+            <span class="dept-card-link">View Formal Invite &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Mechanical Engineering -->
+        <div class="spotlight-card dept-card reveal-up" onclick="openDeptModal('me')" role="button" tabindex="0">
+          <div class="card-content">
+            <div class="dept-card-top">
+              <div class="dept-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </div>
+              <span class="dept-card-num">04 / DEPT</span>
+            </div>
+            <h3 class="dept-name">Mechanical Engineering</h3>
+            <p class="dept-message">
+              The enduring power of precision, dynamics, and design. Let us gear up for an unforgettable day of shared triumphs and camaraderie.
+            </p>
+            <span class="dept-card-link">View Formal Invite &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Civil Engineering -->
+        <div class="spotlight-card dept-card reveal-up" onclick="openDeptModal('civil')" role="button" tabindex="0">
+          <div class="card-content">
+            <div class="dept-card-top">
+              <div class="dept-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10h6M9 14h6M9 18h6"/></svg>
+              </div>
+              <span class="dept-card-num">05 / DEPT</span>
+            </div>
+            <h3 class="dept-name">Civil Engineering</h3>
+            <p class="dept-message">
+              Constructing the skyline of human endeavor and physical foundations. Join us as we build lasting bridges across disciplines.
+            </p>
+            <span class="dept-card-link">View Formal Invite &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Automobile Engineering -->
+        <div class="spotlight-card dept-card reveal-up" onclick="openDeptModal('auto')" role="button" tabindex="0">
+          <div class="card-content">
+            <div class="dept-card-top">
+              <div class="dept-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><path d="M5 17H3v-6l2-4h9l4 4h3v6h-2M7 17h8"/></svg>
+              </div>
+              <span class="dept-card-num">06 / DEPT</span>
+            </div>
+            <h3 class="dept-name">Automobile Engineering</h3>
+            <p class="dept-message">
+              Driving mobility forward with speed, safety, and smart design. Accelerate into the celebration with our AIML &amp; Data Science team.
+            </p>
+            <span class="dept-card-link">View Formal Invite &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Master of Computer Applications (MCA) -->
+        <div class="spotlight-card dept-card reveal-up" onclick="openDeptModal('mca')" role="button" tabindex="0">
+          <div class="card-content">
+            <div class="dept-card-top">
+              <div class="dept-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <span class="dept-card-num">07 / DEPT</span>
+            </div>
+            <h3 class="dept-name">MCA</h3>
+            <p class="dept-message">
+              Pioneering advanced application architecture, cloud solutions, and enterprise software. Join us to celebrate the craft of modern computing.
+            </p>
+            <span class="dept-card-link">View Formal Invite &rarr;</span>
+          </div>
+        </div>
+
+        <!-- First Year Engineering -->
+        <div class="spotlight-card dept-card reveal-up" onclick="openDeptModal('fe')" role="button" tabindex="0">
+          <div class="card-content">
+            <div class="dept-card-top">
+              <div class="dept-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <span class="dept-card-num">08 / DEPT</span>
+            </div>
+            <h3 class="dept-name">First Year Engineering</h3>
+            <p class="dept-message">
+              The foundational spark of scientific curiosity and future innovators. Begin your inspiring journey into engineering excellence with us.
+            </p>
+            <span class="dept-card-link">View Formal Invite &rarr;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Schedule Section -->
+  <section id="schedule" class="section-pad" aria-labelledby="sched-title">
+    <div class="container">
+      <div class="text-center reveal-up">
+        <div class="micro-badge">Program Itinerary</div>
+        <h2 id="sched-title" class="editorial-title">
+          The Day's <span class="editorial-serif-accent gold-gradient-text">Journey</span>
+        </h2>
+        <p class="section-sub">
+          Tuesday, September 15, 2026 &nbsp;&middot;&nbsp; Seminar Hall, Samarth Campus
+        </p>
+
+        <!-- Category Filter Tabs -->
+        <div class="schedule-filter-wrap">
+          <button class="filter-btn active" data-filter="all">All Events</button>
+          <button class="filter-btn" data-filter="ceremony">Ceremonies</button>
+          <button class="filter-btn" data-filter="technical">Technical &amp; Stalls</button>
+          <button class="filter-btn" data-filter="social">Competitions &amp; Cultural</button>
+        </div>
+      </div>
+
+      <!-- Schedule Timeline -->
+      <div class="schedule-timeline">
+        <!-- 09:00 AM -->
+        <div class="timeline-entry reveal-up" data-category="ceremony">
+          <div class="timeline-pin"></div>
+          <div class="spotlight-card timeline-card">
+            <div class="card-content">
+              <div class="timeline-top">
+                <span class="timeline-time">09:00 AM &ndash; 10:00 AM</span>
+                <span class="timeline-tag">Ceremony</span>
+              </div>
+              <h3 class="timeline-heading">Inauguration &amp; Keynote Address</h3>
+              <p class="timeline-desc">
+                Traditional lamp lighting, presidential address by College Leadership, and opening remarks honoring Sir M. Visvesvaraya's legacy.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10:00 AM -->
+        <div class="timeline-entry reveal-up" data-category="technical">
+          <div class="timeline-pin"></div>
+          <div class="spotlight-card timeline-card">
+            <div class="card-content">
+              <div class="timeline-top">
+                <span class="timeline-time">10:00 AM &ndash; 12:00 PM</span>
+                <span class="timeline-tag">Technical</span>
+              </div>
+              <h3 class="timeline-heading">Technical Paper Presentations &amp; AI Symposium</h3>
+              <p class="timeline-desc">
+                Faculty and students present groundbreaking interdisciplinary research bridging Machine Learning, Data Analytics, and Core Engineering.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12:00 PM -->
+        <div class="timeline-entry reveal-up" data-category="technical">
+          <div class="timeline-pin"></div>
+          <div class="spotlight-card timeline-card">
+            <div class="card-content">
+              <div class="timeline-top">
+                <span class="timeline-time">12:00 PM &ndash; 01:00 PM</span>
+                <span class="timeline-tag">Technical</span>
+              </div>
+              <h3 class="timeline-heading">Department Project Exhibitions</h3>
+              <p class="timeline-desc">
+                Interactive stalls set up by each engineering branch showcasing working prototypes, autonomous bots, and structural models.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 01:00 PM -->
+        <div class="timeline-entry reveal-up" data-category="social">
+          <div class="timeline-pin"></div>
+          <div class="spotlight-card timeline-card">
+            <div class="card-content">
+              <div class="timeline-top">
+                <span class="timeline-time">01:00 PM &ndash; 02:00 PM</span>
+                <span class="timeline-tag">Networking</span>
+              </div>
+              <h3 class="timeline-heading">Fellowship Luncheon &amp; Campus Networking</h3>
+              <p class="timeline-desc">
+                Refreshments and lunch in the college dining hall. An opportunity to bond across departments, exchange ideas, and build friendships.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02:00 PM -->
+        <div class="timeline-entry reveal-up" data-category="social">
+          <div class="timeline-pin"></div>
+          <div class="spotlight-card timeline-card">
+            <div class="card-content">
+              <div class="timeline-top">
+                <span class="timeline-time">02:00 PM &ndash; 04:00 PM</span>
+                <span class="timeline-tag">Competition</span>
+              </div>
+              <h3 class="timeline-heading">Inter-Departmental Engineering Challenges</h3>
+              <p class="timeline-desc">
+                Competitive coding blitz, reverse engineering quizzes, structure load testing, and hands-on problem solving contests.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04:00 PM -->
+        <div class="timeline-entry reveal-up" data-category="social">
+          <div class="timeline-pin"></div>
+          <div class="spotlight-card timeline-card">
+            <div class="card-content">
+              <div class="timeline-top">
+                <span class="timeline-time">04:00 PM &ndash; 05:30 PM</span>
+                <span class="timeline-tag">Cultural</span>
+              </div>
+              <h3 class="timeline-heading">Cultural Performances &amp; Creative Showcase</h3>
+              <p class="timeline-desc">
+                Live music, dance recitals, and creative arts performed by talented engineering students from across all departments.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05:30 PM -->
+        <div class="timeline-entry reveal-up" data-category="ceremony">
+          <div class="timeline-pin"></div>
+          <div class="spotlight-card timeline-card">
+            <div class="card-content">
+              <div class="timeline-top">
+                <span class="timeline-time">05:30 PM &ndash; 06:30 PM</span>
+                <span class="timeline-tag">Ceremony</span>
+              </div>
+              <h3 class="timeline-heading">Awards Distribution &amp; Vote of Thanks</h3>
+              <p class="timeline-desc">
+                Felicitation of competition victors, outstanding engineering achievements, and a warm closing address by the organizing committee.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add to Calendar -->
+      <div class="calendar-bar reveal-up">
+        <button class="btn-cal-export" onclick="addToGoogleCalendar()" aria-label="Add event to Google Calendar">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Add to Google Calendar
+        </button>
+        &nbsp;&nbsp;
+        <button class="btn-cal-export" onclick="downloadIcsCalendar()" aria-label="Download ICS file for Outlook and Apple Calendar">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download .ICS (Apple / Outlook)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP Section -->
+  <section id="rsvp" class="section-pad rsvp-section" aria-labelledby="rsvp-title">
+    <div class="container">
+      <div class="text-center reveal-up">
+        <div class="micro-badge">Registration</div>
+        <h2 id="rsvp-title" class="editorial-title">
+          Confirm Your <span class="editorial-serif-accent gold-gradient-text">Presence</span>
+        </h2>
+        <p class="section-sub">
+          Please register by <strong>September 13, 2026</strong> to help us arrange seating, refreshments, and event kits.
+        </p>
+      </div>
+
+      <div class="spotlight-card rsvp-box reveal-up">
+        <div class="card-content">
+          <form id="rsvp-form" novalidate>
+            <div class="form-grid">
+              <!-- Full Name -->
+              <div class="field-container col-full">
+                <label for="f-name" class="field-label">Full Name <span>*</span></label>
+                <input type="text" id="f-name" class="field-input" placeholder="e.g. Dr. Rajesh Sharma / Sneha Kulkarni" required />
+                <span class="field-error-msg">Please enter your full name.</span>
+              </div>
+
+              <!-- Department -->
+              <div class="field-container">
+                <label for="f-dept" class="field-label">Department <span>*</span></label>
+                <select id="f-dept" class="field-select" required>
+                  <option value="" disabled selected>Select Department</option>
+                  <option value="aiml">AIML</option>
+                  <option value="ds">Data Science</option>
+                  <option value="ce">Computer Engineering</option>
+                  <option value="entc">E&amp;TC Engineering</option>
+                  <option value="ee">Electrical Engineering</option>
+                  <option value="me">Mechanical Engineering</option>
+                  <option value="civil">Civil Engineering</option>
+                  <option value="auto">Automobile Engineering</option>
+                  <option value="mca">Master of Computer Applications (MCA)</option>
+                  <option value="fe">First Year Engineering</option>
+                </select>
+                <span class="field-error-msg">Please select your department.</span>
+              </div>
+
+              <!-- Designation -->
+              <div class="field-container">
+                <label for="f-desig" class="field-label">Designation <span>*</span></label>
+                <select id="f-desig" class="field-select" required>
+                  <option value="" disabled selected>Select Role</option>
+                  <option value="faculty">Faculty / Staff</option>
+                  <option value="student">Student</option>
+                  <option value="hod">Head of Department</option>
+                  <option value="alumni">Distinguished Alumni</option>
+                </select>
+                <span class="field-error-msg">Please select your role.</span>
+              </div>
+
+              <!-- Contact -->
+              <div class="field-container">
+                <label for="f-contact" class="field-label">Email or Phone <span>*</span></label>
+                <input type="text" id="f-contact" class="field-input" placeholder="e.g. name@college.edu or 9876543210" required />
+                <span class="field-error-msg">Please provide a valid contact.</span>
+              </div>
+
+              <!-- Attendees -->
+              <div class="field-container">
+                <label for="f-attendees" class="field-label">Attending Members <span>*</span></label>
+                <input type="number" id="f-attendees" class="field-input" value="1" min="1" max="20" required />
+                <span class="field-error-msg">Minimum 1 attendee required.</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit-rsvp" id="btn-submit-rsvp">
+              <span class="submit-text">Confirm My RSVP &rarr;</span>
+              <div class="spinner-icon"></div>
+            </button>
+          </form>
+
+          <!-- RSVP Success View -->
+          <div id="rsvp-success" role="alert" aria-live="polite">
+            <div class="success-icon-wrap">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 class="success-title">Attendance Confirmed!</h3>
+            <p class="success-desc">
+              Thank you, <strong id="success-guest-name" class="text-white">Guest</strong>. We have officially recorded your RSVP. We eagerly look forward to welcoming you to the Seminar Hall on September 15, 2026.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer & Contact Section -->
+  <footer id="contact" aria-label="Footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Affiliation -->
+        <div>
+          <div class="nav-brand" style="margin-bottom: 1.25rem;">
+            <div class="nav-logo-box">ED</div>
+            <div>
+              <p class="footer-brand-title">Engineering Day 2026</p>
+              <p class="footer-brand-sub">Samarth College of Engineering &amp; Management</p>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Jointly organized with passion and honor by the Department of Artificial Intelligence &amp; Machine Learning and the Department of Computer Science &amp; Engineering (Data Science).
+          </p>
+          <p class="footer-accreditation">
+            Approved by AICTE, New Delhi &amp; DTE Maharashtra &middot; Affiliated to Savitribai Phule Pune University (SPPU).
+          </p>
+        </div>
+
+        <!-- Col 2: Venue & Contact -->
+        <div>
+          <h4 class="footer-col-title">Campus &amp; Inquiries</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>On Kalyan&ndash;Ahilyanagar Highway, At Bangarwadi, Post Belhe, Tal. Junnar, Dist. Pune, Maharashtra &ndash; 412410</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+919637238034">+91 96372 38034</a>
+            </li>
+            <li class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:sibmbelhe@rediffmail.com">sibmbelhe@rediffmail.com</a>
+            </li>
+            <li class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Student Coordinator: [Name] &middot; [Phone]</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Navigation -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">Welcome Letter</a></li>
+            <li><a href="#departments" class="footer-link">Invited Departments</a></li>
+            <li><a href="#schedule" class="footer-link">Event Schedule</a></li>
+            <li><a href="#rsvp" class="footer-link">RSVP Registration</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Campus Map -->
+      <div class="footer-map-box reveal-up">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2940.018874988824!2d74.18633297387649!3d19.129286350300116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdc5b34cb680f85%3A0x87d1de6cfe5ca491!2sSamarth%20College%20Of%20Engineering%20%26%20Management!5e0!3m2!1sen!2sin!4v1725000000000!5m2!1sen!2sin"
+          width="100%" height="220" style="border:0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Samarth College of Engineering on Google Maps">
+        </iframe>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <span>&copy; 2026 Samarth College of Engineering &amp; Management. Designed with precision &amp; care.</span>
+        <button class="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+          Back to top
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Department Invitation Modal Dialog -->
+  <div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-dept-title">
+    <div id="modal-backdrop"></div>
+    <div id="modal-card">
+      <button id="modal-close" aria-label="Close dialog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <!-- Wax Seal Crest -->
+      <div class="wax-seal-crest">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polygon points="12 4 14.5 9 20 9.5 16 13.5 17.5 19 12 16 6.5 19 8 13.5 4 9.5 9.5 9 12 4"/></svg>
+      </div>
+
+      <span class="modal-header-badge">Formal Invitation Card</span>
+      <h3 id="modal-dept-title" class="modal-dept-title">Department Name</h3>
+      
+      <div class="modal-letter-content">
+        <p id="modal-dept-salutation" class="modal-dept-salutation">Dear Faculty &amp; Students,</p>
+        <p id="modal-dept-message" class="modal-letter-text">
+          Invitation message here.
+        </p>
+        <span class="modal-dept-signoff">Cordially yours in engineering innovation,</span>
+        <div class="modal-dept-signatures">
+          Departments of AIML &amp; Data Science · Samarth College
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="modal-btn-rsvp" class="btn-modal-rsvp">Accept &amp; RSVP Now &rarr;</button>
+        <button id="modal-btn-copy" class="btn-modal-copy">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span>Copy Invite</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CDN Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Application Logic -->
+  <script src="js/hero-network.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
