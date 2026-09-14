@@ -955,12 +955,59 @@ ul, ol { list-style: none; }
   font-weight: 600;
 }
 
+.dept-hod-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.28rem 0.65rem;
+  background: rgba(226, 183, 85, 0.08);
+  border: 1px solid rgba(226, 183, 85, 0.25);
+  border-radius: 999px;
+  font-size: 0.74rem;
+  color: var(--champagne);
+  margin-bottom: 0.75rem;
+  width: fit-content;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.dept-card:hover .dept-hod-tag {
+  background: rgba(226, 183, 85, 0.16);
+  border-color: rgba(226, 183, 85, 0.5);
+  box-shadow: 0 0 12px rgba(226, 183, 85, 0.2);
+}
+
+.dept-hod-tag svg {
+  color: var(--gold-light);
+}
+
+.dept-hod-tag .hod-label {
+  color: var(--text-dim);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.68rem;
+}
+
+.dept-hod-tag .hod-name {
+  color: #fff;
+  font-weight: 700;
+}
+
 .dept-name {
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: #fff;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.dept-salutation-preview {
+  font-family: var(--font-cursive);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--gold-light);
+  margin-bottom: 0.45rem;
 }
 
 .dept-message {
@@ -1083,6 +1130,21 @@ ul, ol { list-style: none; }
   font-size: 0.85rem;
   color: var(--champagne);
   font-weight: 600;
+}
+
+.timeline-duration {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  background: rgba(226, 183, 85, 0.1);
+  border: 1px solid rgba(226, 183, 85, 0.28);
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  letter-spacing: 0.02em;
 }
 
 .timeline-tag {
@@ -1557,7 +1619,44 @@ footer {
   color: #fff;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.modal-dept-hod-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.35rem;
+}
+
+.modal-hod-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  background: rgba(226, 183, 85, 0.1);
+  border: 1px solid rgba(226, 183, 85, 0.35);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--champagne);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(226, 183, 85, 0.12);
+}
+
+.modal-hod-badge svg {
+  color: var(--gold-light);
+}
+
+.modal-hod-badge .hod-label {
+  color: var(--text-dim);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.modal-hod-badge .hod-val {
+  color: #fff;
+  font-weight: 700;
 }
 
 /* Professional Cursive Salutation */

@@ -7,63 +7,71 @@
   'use strict';
 
   /* ── 1. CONFIGURATION & STATE ────────────────────────────── */
-  const EVENT_DATE = new Date('2026-09-15T09:00:00+05:30');
+  const EVENT_DATE = new Date('2026-09-15T13:00:00+05:30');
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const DEPTS = {
     ce: {
       name: 'Computer Engineering',
       code: 'CE',
-      salutation: 'Dear Faculty & Students of Computer Engineering,',
+      hod: 'Prof. Shegar S.R.',
+      salutation: 'Dear Shegar Mam, Respected Faculty & Students of Computer Engineering,',
       message: 'The Departments of AIML & Data Science warmly invite you to join us in celebrating Engineering Day 2026. From foundational algorithms to modern architectures, your department continues to inspire. Let us unite to code, collaborate, and celebrate the spirit of engineering!',
       tagline: 'Code the future, together.'
     },
     entc: {
       name: 'Electronics & Telecomm. Engineering',
       code: 'E&TC',
-      salutation: 'Dear Faculty & Students of E&TC Engineering,',
+      hod: 'Prof. Kothari N.S.',
+      salutation: 'Dear Prof. Kothari N.S., Respected Faculty & Students of E&TC Engineering,',
       message: 'The Departments of AIML & Data Science extend a heartfelt invitation to Engineering Day 2026. Your contributions in communication, signal processing, and embedded systems drive modern connected worlds. Let us amplify innovation together!',
       tagline: 'Tuning into collaborative innovation.'
     },
     ee: {
       name: 'Electrical Engineering',
       code: 'EE',
-      salutation: 'Dear Faculty & Students of Electrical Engineering,',
+      hod: 'Prof. Nagare N.',
+      salutation: 'Dear Prof. Nagare N., Respected Faculty & Students of Electrical Engineering,',
       message: 'The Departments of AIML & Data Science cordially invite you to celebrate Engineering Day 2026 with us. Powering industries and illuminating society, your discipline forms the bedrock of modern civilization. Join us as we energize this special celebration!',
       tagline: 'Powering the spark of tomorrow.'
     },
     me: {
       name: 'Mechanical Engineering',
       code: 'ME',
-      salutation: 'Dear Faculty & Students of Mechanical Engineering,',
+      hod: 'Prof. Khatode A.L.',
+      salutation: 'Dear Prof. Khatode A.L., Respected Faculty & Students of Mechanical Engineering,',
       message: 'The Departments of AIML & Data Science are honored to invite you to Engineering Day 2026. The timeless principles of mechanics, design, and thermodynamics continue to build our world. Let us join gears and build unforgettable memories!',
       tagline: 'Precision, strength, and innovation.'
     },
     civil: {
       name: 'Civil Engineering',
       code: 'CIVIL',
-      salutation: 'Dear Faculty & Students of Civil Engineering,',
+      hod: 'Prof. Navale R.B.',
+      salutation: 'Dear Prof. Navale R.B., Respected Faculty & Students of Civil Engineering,',
       message: 'The Departments of AIML & Data Science warmly invite you to Engineering Day 2026. As the creators of sustainable infrastructure and iconic structures, you build the foundation of human progress. Join us as we build bridges across disciplines!',
       tagline: 'Constructing visions into reality.'
     },
     auto: {
       name: 'Automobile Engineering',
       code: 'AUTO',
-      salutation: 'Dear Faculty & Students of Automobile Engineering,',
+      hod: 'Prof. Khatode A.L.',
+      salutation: 'Dear Prof. Khatode A.L., Respected Faculty & Students of Automobile Engineering,',
       message: 'The Departments of AIML & Data Science take immense joy in inviting you to Engineering Day 2026. From mobility engineering to next-gen propulsion, you drive modern society forward. Accelerate your enthusiasm and join the celebration!',
       tagline: 'Driving engineering excellence.'
     },
     mca: {
       name: 'Master of Computer Applications (MCA)',
       code: 'MCA',
-      salutation: 'Dear Faculty & Students of MCA,',
+      hod: 'Prof. Gopale P.J.',
+      salutation: 'Dear Prof. Gopale P.J., Respected Faculty & Students of MCA,',
       message: 'The Departments of AIML & Data Science cordially invite you to celebrate Engineering Day 2026 with us. Empowering technology with advanced application development, software craft, and enterprise platforms, your department plays an integral role in driving digital transformation. Join us as we code, create, and celebrate together!',
       tagline: 'Bridging logic, enterprise, and future applications.'
     },
     fe: {
-      name: 'First Year Engineering (Applied Science & Humanities)',
+      name: 'First Year Engineering (Applied Science)',
       code: 'FE',
-      salutation: 'Dear Faculty & Students of First Year Engineering,',
+      hod: 'Prof. Ghule S.',
+      salutation: 'Dear Prof. Ghule S., Respected Faculty & Students of Applied Science & First Year Engineering,',
       message: 'The Departments of AIML & Data Science warmly welcome and invite you to celebrate Engineering Day 2026. As the foundation stones and fresh minds igniting our campus with boundless curiosity and energy, your journey begins here. Step boldly into the inspiring world of engineering excellence!',
       tagline: 'Where the engineering journey begins.'
     }
@@ -309,6 +317,7 @@
   const modalOverlay = document.getElementById('modal-overlay');
   const modalClose = document.getElementById('modal-close');
   const modalDeptTitle = document.getElementById('modal-dept-title');
+  const modalDeptHod = document.getElementById('modal-dept-hod');
   const modalDeptSalutation = document.getElementById('modal-dept-salutation');
   const modalDeptMessage = document.getElementById('modal-dept-message');
   const modalBtnRsvp = document.getElementById('modal-btn-rsvp');
@@ -385,6 +394,14 @@
     currentDeptKey = deptKey;
 
     if (modalDeptTitle) modalDeptTitle.textContent = data.name;
+    if (modalDeptHod) {
+      if (data.hod) {
+        modalDeptHod.innerHTML = `<span class="modal-hod-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="hod-label">Head of Department:</span> <span class="hod-val">${data.hod}</span></span>`;
+        modalDeptHod.style.display = 'block';
+      } else {
+        modalDeptHod.style.display = 'none';
+      }
+    }
     if (modalDeptSalutation) modalDeptSalutation.textContent = data.salutation;
     if (modalDeptMessage) modalDeptMessage.textContent = data.message;
 
@@ -434,7 +451,7 @@
     modalBtnCopy.addEventListener('click', () => {
       const data = DEPTS[currentDeptKey];
       if (!data) return;
-      const textToCopy = `🏛️ Invitation to ${data.name} · Engineering Day 2026\n\n${data.salutation}\n\n${data.message}\n\n🗓️ Date: September 15, 2026 | 09:00 AM\n📍 Venue: Seminar Hall, Samarth College of Engineering & Management, Belhe\n🔗 Register: https://engineering-day-2026.netlify.app`;
+      const textToCopy = `🏛️ Invitation to ${data.name} · Engineering Day 2026\n\n${data.salutation}\n\n${data.message}\n\n🗓️ Date: September 15, 2026 | 01:00 PM – 03:40 PM\n📍 Venue: Seminar Hall, Samarth College of Engineering & Management, Belhe\n🔗 Register: https://engineering-day-2026.netlify.app`;
       
       navigator.clipboard.writeText(textToCopy).then(() => {
         const originalText = modalBtnCopy.innerHTML;
@@ -451,8 +468,8 @@
     const title = encodeURIComponent('Engineering Day 2026 · Samarth College of Engineering');
     const details = encodeURIComponent('Jointly hosted by the Departments of AIML & Data Science at Samarth College of Engineering & Management, Belhe. Celebrating innovation, collaboration, and engineering excellence.');
     const location = encodeURIComponent('Seminar Hall, Samarth College of Engineering & Management, Belhe, Maharashtra 412410');
-    // 2026-09-15 09:00 to 18:00 IST (UTC: 03:30 to 12:30)
-    const dates = '20260915T033000Z/20260915T123000Z';
+    // 2026-09-15 13:00 to 15:40 IST (UTC: 07:30 to 10:10)
+    const dates = '20260915T073000Z/20260915T101000Z';
     const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
     window.open(url, '_blank');
   };
@@ -467,8 +484,8 @@
       'BEGIN:VEVENT',
       'UID:enggday-2026-samarth@college.edu',
       'DTSTAMP:20260911T000000Z',
-      'DTSTART:20260915T033000Z',
-      'DTEND:20260915T123000Z',
+      'DTSTART:20260915T073000Z',
+      'DTEND:20260915T101000Z',
       'SUMMARY:Engineering Day 2026 — Samarth College of Engineering',
       'DESCRIPTION:Jointly hosted by the Departments of AIML & Data Science at Samarth College of Engineering & Management, Belhe.',
       'LOCATION:Seminar Hall, Samarth College of Engg. & Mgmt., Belhe',
